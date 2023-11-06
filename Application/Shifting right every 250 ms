@@ -28,9 +28,9 @@ int main(){
 
 		for (i=0; i<8; i++){
 
-          LED_VoidOn(LED_Signal[i]);
-          Delay_time(5);
-          LED_VoidOf(LED_Signal[i]);
+          LED_VoidOn(LED_Signal[7-i]);
+          Delay_time(2);
+          LED_VoidOf(LED_Signal[7-i]);
           Delay_time(2);
 
 		}
@@ -39,3 +39,4 @@ int main(){
 	}
 	return 0;
 }
+
