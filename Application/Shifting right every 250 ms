@@ -1,0 +1,41 @@
+/*
+ * LED_Main.c
+
+
+ *
+ *  Created on: Nov 6, 2023
+ *      Author: Nada
+ */
+#include "STD_TYPES.h"
+#include "BIT_MATH.h"
+
+#include "DIO_interface.h"
+#include "LED_interface.h"
+
+LED_Adjusting LED_Signal[8] = {{LED_PORTA, LED_PIN0, Active_High}, {LED_PORTA, LED_PIN1, Active_High},
+{LED_PORTA, LED_PIN2, Active_High}, {LED_PORTA, LED_PIN3, Active_High},
+{LED_PORTA, LED_PIN4, Active_High}, {LED_PORTA, LED_PIN5, Active_High}, {LED_PORTA, LED_PIN6, Active_High},
+{LED_PORTA, LED_PIN7, Active_High}
+
+};
+
+int main(){
+	int i = 0;
+	for (i=0; i<8; i++){
+			LED_VoidInit(LED_Signal[i]);
+			}
+	while(1){
+
+		for (i=0; i<8; i++){
+
+          LED_VoidOn(LED_Signal[i]);
+          Delay_time(5);
+          LED_VoidOf(LED_Signal[i]);
+          Delay_time(2);
+
+		}
+
+
+	}
+	return 0;
+}
