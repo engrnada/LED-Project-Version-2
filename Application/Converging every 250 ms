@@ -18,7 +18,6 @@ LED_Adjusting LED_Signal[8] = {{LED_PORTA, LED_PIN0, Active_High}, {LED_PORTA, L
 {LED_PORTA, LED_PIN7, Active_High}
 
 };
-
 int main(){
 	int i = 0;
 	for (i=0; i<8; i++){
@@ -31,13 +30,18 @@ int main(){
           LED_VoidOn(LED_Signal[7-i]);
           LED_VoidOn(LED_Signal[i]);
           Delay_time(2);
-          LED_VoidOf(LED_Signal[7-i]);
-          LED_VoidOf(LED_Signal[i]);
-          Delay_time(2);
+		}
+		for (i=0; i<8/2; i++){
+        LED_VoidOf(LED_Signal[7-i]);
+        LED_VoidOf(LED_Signal[i]);
 
 		}
+		 Delay_time(2);
+
 	}
 	return 0;
 }
+
+
 
 
