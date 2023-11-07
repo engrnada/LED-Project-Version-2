@@ -31,15 +31,17 @@ int main(){
           LED_VoidOn(LED_Signal[3-i]);
           LED_VoidOn(LED_Signal[4+i]);
           Delay_time(2);
-          LED_VoidOf(LED_Signal[3-i]);
-          LED_VoidOf(LED_Signal[4+i]);
-          Delay_time(2);
 
 		}
+		for (i=0; i<8; i++){
+
+		          LED_VoidOf(LED_Signal[i]);
+		}
+
+		Delay_time(2);
 	}
 	return 0;
 }
-
 
 
 
